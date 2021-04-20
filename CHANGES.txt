@@ -4,6 +4,7 @@ Nightly
 Improvements:
 
 - Support cookie management for HTTP sources.
+- Added Azure Blob support
 
 1.13.0 2020-11-18
 ~~~~~~~~~~~~~~~~~

@@ -68,7 +68,7 @@ class TileCacheTestBase(object):
                 image_opts=ImageOptions(format='image/png')))
 
     def test_is_cached_miss(self):
-        assert not self.cache.is_cached(Tile((3009, 589, 12)))
+        assert not self.cache.is_cached(Tile((3009, 600, 12)))
 
     def test_is_cached_hit(self):
         tile = self.create_tile()
@@ -82,7 +82,7 @@ class TileCacheTestBase(object):
         assert self.cache.load_tile(Tile(None))
 
     def test_load_tile_not_cached(self):
-        tile = Tile((3009, 589, 12))
+        tile = Tile((3009, 599, 12))
         assert not self.cache.load_tile(tile)
         assert tile.source is None
         assert tile.is_missing()

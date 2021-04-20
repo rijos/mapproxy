@@ -11,6 +11,7 @@ aws-sam-translator==1.26.0
 aws-xray-sdk==2.6.0
 beautifulsoup4==4.9.1
 boto3==1.14.46
+azure-storage-blob==12.8.0
 boto==2.49.0
 botocore==1.17.46
 certifi==2020.6.20
@@ -76,3 +77,5 @@ wrapt==1.12.1
 xmltodict==0.12.0
 zipp==1.2.0;python_version<"3.6"
 zipp==3.1.0;python_version>="3.6"
+sphinx_bootstrap_theme==0.7.1
+

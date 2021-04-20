@@ -1132,6 +1132,22 @@ class CacheConfiguration(ConfigurationBase):
                 gpkg_file_path, grid_conf.tile_grid(), table_name
             )
 
+    def _azureblob_cache(self, grid_conf, file_ext):
+        from mapproxy.cache.azureblob import AzureBlobCache
+
+        sas_token = os.getenv("AZURE_SAS_TOKEN")
+
+        if not sas_token:
+            raise ConfigurationError("no sas_token configured for azureblob cache %s" % self.conf['name'])
+
+        base_path = os.path.join(self.conf['name'], grid_conf.tile_grid().name)
+
+        return AzureBlobCache(
+            sas_token=sas_token,
+            file_ext=file_ext,
+            base_path=base_path
+        )
+
     def _s3_cache(self, grid_conf, file_ext):
         from mapproxy.cache.s3 import S3Cache
 
